@@ -23,9 +23,9 @@ int length(char* str){return strlen(str);}
 
 char itoc(int in){if(in<0||in>9){return ' ';}return (char)(in+48);}
 
-char* itoa(int in){int a = digit(in);char arr[a];for(int i = 0; i < a; i++){arr[a-i-1]=itoc(in%10);in/=10;}char* ret = arr;return ret;}
+char* ita(int in){int a = digit(in);char arr[a];for(int i = 0; i < a; i++){arr[a-i-1]=itoc(in%10);in/=10;}char* ret = arr;return ret;}
 
-char* ftoa(float in, int dec){if(dec<0){return "";}if((int)(in*pow(10,dec+1))%10>=5){in+=pow(10, -dec);}int a = digit((int)in);char out[dec+1+a];char*temp = itoa((int)in);for(int i = 0; i < a; i++){out[i]=temp[i];};out[a]='.';for(int i = 1; i <=dec; i++){in*=10;out[a+i]=itoc((int)in%10);};char* ret = out;return ret;}
+char* ftoa(float in, int dec){if(dec<0){return "";}if((int)(in*pow(10,dec+1))%10>=5){in+=pow(10, -dec);}int a = digit((int)in);char out[dec+1+a];char*temp = ita((int)in);for(int i = 0; i < a; i++){out[i]=temp[i];};out[a]='.';for(int i = 1; i <=dec; i++){in*=10;out[a+i]=itoc((int)in%10);};char* ret = out;return ret;}
 
 int transferNum(char a){if((int)a>=97&&(int)a<=122){return (int)a-87;}return (int)a-48;}
 
