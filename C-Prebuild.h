@@ -13,7 +13,7 @@ typedef struct{double* arr;int length;} doubleArray;
 
 char* clonestring(char* str){char out[strlen(str)];strcpy(out, str);char* ret = out; return ret;}
 
-char* substring(char*str, int start, int end){if(start<0||end>strlen(str)||start>=end){return "Error";}char out[end-start];for (int i = 0; i < end-start; i++){out[i]=str[i+start];}char* ret = out;return ret;}
+char* substring(char*str, int start, int end){if(start<0||end>(int)strlen(str)||start>=end){return "Error";}char out[end-start];for (int i = 0; i < end-start; i++){out[i]=str[i+start];}char* ret = out;return ret;}
 
 char* scan(){char str[1000000];fgets(str,1000000,stdin);return substring(str, 0, strlen(str)-1);}
 
