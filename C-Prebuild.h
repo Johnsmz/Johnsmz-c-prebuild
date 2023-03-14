@@ -11,7 +11,7 @@ typedef struct{int* arr;int length;} intArray;
 
 typedef struct{double* arr;int length;} doubleArray;
 
-float power(float num, float n){if(n<0){num = 1/num;}float out=1; for(int i = 0; i < n; i++){out *= num;}return out;}
+float power(float num, float n){if(n<0){num = 1/num;n*=-1;}float out=1; for(int i = 0; i < n; i++){out *= num;}return out;}
 
 char* clonestring(char* str){char out[strlen(str)];strcpy(out, str);char* ret = out; return ret;}
 
